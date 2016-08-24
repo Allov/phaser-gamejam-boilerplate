@@ -1,0 +1,26 @@
+{
+    "extends": [
+        "eslint:recommended",
+        "plugin:import/errors",
+        "plugin:import/warnings"
+    ],
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "parser": "babel-eslint",
+    "globals": {
+        "Phaser": true
+    },
+    "rules": {
+        "strict": 0,
+        "indent": [2, 4],
+        "max-len": [2, 200, 2,
+            {
+                "ignoreUrls": true,
+                "ignoreComments": true
+            }],
+        "quotes": [2, "single", "avoid-escape"],
+        "no-shadow": 1
+    }
+}
