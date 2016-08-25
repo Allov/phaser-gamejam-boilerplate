@@ -2,6 +2,7 @@ import GameState from 'states/GameState';
 import LoadingState from 'states/LoadingState';
 import MenuState from 'states/MenuState';
 import 'helpers/Helpers';
+import 'helpers/Phaser.Helpers';
 
 class Game extends Phaser.Game {
 

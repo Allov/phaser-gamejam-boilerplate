@@ -6,14 +6,13 @@ export default class LoadingState extends Phaser.State {
         this.game.load.start();
     }
 
+    // Underneath is the basic loading handling with custom transition.
+    // Modify if you'd like to display more information about the loading (such as filenames or loading categories).
     create() {
         this.game.stage.backgroundColor = 0x484878;
 
-        this.status = this.game.add.text(this.game.world.centerX, this.game.world.centerY, 'loading', { font: '36px Courier New', fill: '#fff' });
-        this.status.anchor.x = 0.5;
-
-        this.percent = this.game.add.text(this.game.world.centerX, this.game.world.centerY + 40, '000', { font: '18px Courier New', fill: '#ff0' });
-        this.percent.anchor.x = 0.5;
+        this.status = this.game.add.t(this.game.world.centerX, this.game.world.centerY, 'loading');
+        this.percent = this.game.add.t(this.game.world.centerX, this.game.world.centerY + 40, '000', { size: '18px', fill: '#ff0' });
 
         this.game.load.onLoadStart.add(this.loadStart, this);
         this.game.load.onFileComplete.add(this.fileComplete, this);
@@ -47,9 +46,6 @@ export default class LoadingState extends Phaser.State {
     }
 
     cleanupAndStart() {
-        this.status.kill();
-        this.percent.kill();
-
         this.game.state.start('MenuState');
     }
 }

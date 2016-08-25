@@ -1,13 +1,7 @@
-import ColoredText from 'objects/ColoredText';
-
 class GameState extends Phaser.State {
-
     create() {
-        let center = { x: this.game.world.centerX, y: this.game.world.centerY }
-        let text = new ColoredText(this.game, center.x, center.y, '{#ff0}helloWorld{#fff}(){#aaa};', { font: '24px Courier New'});
-        text.anchor.set(0.5);
+        this.game.add.t(this.game.world.centerX, this.game.world.centerY, '{#ff0}helloWorld{#fff}(){#aaa};', { font: '24px Courier New'});
     }
-
 }
 
 export default GameState;

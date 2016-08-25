@@ -15,8 +15,6 @@ export default class ColoredText extends Phaser.Text {
         super(game, x, y, text, style);
 
         this.coloredText = text;
-
-        this.game.stage.addChild(this);
     }
 
     parseColorFromText() {
